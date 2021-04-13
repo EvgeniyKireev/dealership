@@ -22,7 +22,6 @@ public class CarShowRoom {
     public String address;
     public String phone;
     public String workingHours;
-    public Integer price;
 
 
     @JsonBackReference

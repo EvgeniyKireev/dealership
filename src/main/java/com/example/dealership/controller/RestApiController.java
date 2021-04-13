@@ -41,6 +41,35 @@ public class RestApiController {
                 ? new ResponseEntity<>(news, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+    @PostMapping(value = "/api/cars")
+    public ResponseEntity<?> createCar(@RequestBody Car car){
+        carService.create(car);
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
+
+    @PutMapping("/api/cars/update")
+    public ResponseEntity<List<Car>> updateCar(@RequestBody Car car) {
+        final List<Car> cars = carService.update(car);
+
+        return new ResponseEntity<>(cars, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/api/cars/{id}")
+    public ResponseEntity<String> DeleteNewsById(@PathVariable(name = "id") Long id) {
+        String message = carService.DeleteById(id);
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    // carshowroom controller
+    @GetMapping(value = "/api/carshowroom")
+    public ResponseEntity<List<CarShowRoom>> findAllCarShowRoom(){
+        final List<CarShowRoom> newsList = carShowRoomService.findAll();
+
+        return newsList != null && !newsList.isEmpty()
+                ? new ResponseEntity<>(newsList, HttpStatus.OK)
+                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 
     @GetMapping("/api/carshowroom/{id}")
     public ResponseEntity<List<Car>> findShowRoomById(@PathVariable(name = "id") Long id) {
@@ -52,11 +81,11 @@ public class RestApiController {
                 ? new ResponseEntity<>(news.get().cars, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
-    @PostMapping(value = "/api/cars")
-    public ResponseEntity<?> createClient(@RequestBody Car car){
-        carService.create(car);
+    @PostMapping(value = "/api/carshowroom")
+    public ResponseEntity<?> createCarShowRoom(@RequestBody CarShowRoom carShowRoom){
+        carShowRoomService.create(carShowRoom);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
 
 }
