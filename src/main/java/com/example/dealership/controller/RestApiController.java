@@ -42,9 +42,9 @@ public class RestApiController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @PostMapping(value = "/api/cars")
-    public ResponseEntity<?> createCar(@RequestBody Car car){
+    public List<Car> createCar(@RequestBody Car car){
         carService.create(car);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return carService.findAll();
     }
 
     @PutMapping("/api/cars/update")
@@ -82,9 +82,9 @@ public class RestApiController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
     @PostMapping(value = "/api/carshowroom")
-    public ResponseEntity<?> createCarShowRoom(@RequestBody CarShowRoom carShowRoom){
+    public List<CarShowRoom> createCarShowRoom(@RequestBody CarShowRoom carShowRoom){
         carShowRoomService.create(carShowRoom);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return carShowRoomService.findAll();
     }
 
 
