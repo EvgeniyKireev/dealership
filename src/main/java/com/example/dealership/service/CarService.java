@@ -10,14 +10,27 @@ import java.util.Optional;
 
 @Service
 public class CarService {
+    /**
+     * подключение репозитори
+     */
     @Autowired
     private CarRepository carRepository;
 
+    /**
+     * 
+     * @param car объект Car
+     * @return Лист Car
+     */
     public List<Car> create(Car car){
         carRepository.save(car);
         return carRepository.findAll();
     }
 
+    /**
+     * Обновляет авто по id
+     * @param car объект Car
+     * @return Лист авто
+     */
     public List<Car> update(Car car){
         var updatedCar = carRepository.findById(car.getId());
 
@@ -37,16 +50,25 @@ public class CarService {
         return carRepository.findAll();
     }
 
+    /**
+     * Поиск всех авто
+     * @return Лист Car
+     */
     public List<Car> findAll(){
         return carRepository.findAll();
     }
 
+    /**
+     * Поиск Car по id
+     * @param id id Car
+     * @return String
+     */
     public Optional<Car> findById(Long id) {
         return carRepository.findById(id);
     }
     public String DeleteById(Long id) {
         carRepository.deleteById(id);
 
-        return  "Новость удалена";
+        return  "Авто удален";
     }
 }

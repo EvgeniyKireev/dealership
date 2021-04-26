@@ -23,7 +23,9 @@ public class CarShowRoom {
     public String phone;
     public String workingHours;
 
-
+    /**
+     * Связь с авто
+     */
     @JsonBackReference
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "showroom_id")
     public List<Car> cars;

@@ -12,17 +12,33 @@ import java.util.Optional;
 
 @Service
 public class CarShowRoomService {
+    /**
+     * подключение репозитори
+     */
     @Autowired
     private CarShowRoomRepository carShowRoomRepository;
 
+    /**
+     * Создать автосалон
+     * @param carShowRoom объект carShowRoom
+     */
     public void create(CarShowRoom carShowRoom){
         carShowRoomRepository.save(carShowRoom);
     }
 
+    /**
+     * Поиск всех автосалонов
+     * @return Лист CarShowRoom
+     */
     public List<CarShowRoom> findAll(){
         return carShowRoomRepository.findAll();
     }
 
+    /**
+     * Поиск автосалона по id
+     * @param id id CarShowRoom
+     * @return CarshowRoom
+     */
     public Optional<CarShowRoom> findById(Long id) {
         return carShowRoomRepository.findById(id);
     }
