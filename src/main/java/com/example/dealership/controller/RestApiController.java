@@ -62,6 +62,8 @@ public class RestApiController {
     }
 
     // carshowroom controller
+
+    //;;
     @GetMapping(value = "/api/carshowroom")
     public ResponseEntity<List<CarShowRoom>> findAllCarShowRoom(){
         final List<CarShowRoom> newsList = carShowRoomService.findAll();
@@ -70,6 +72,7 @@ public class RestApiController {
                 ? new ResponseEntity<>(newsList, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
 
     @GetMapping("/api/carshowroom/{id}")
     public ResponseEntity<List<Car>> findShowRoomById(@PathVariable(name = "id") Long id) {
