@@ -1,0 +1,5 @@
+com.example.dealership
+com.example.dealership.controller
+com.example.dealership.entity
+com.example.dealership.repository
+com.example.dealership.service

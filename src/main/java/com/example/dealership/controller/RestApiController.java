@@ -34,7 +34,7 @@ public class RestApiController {
     /**
      * Поиск всех автомобилей
      * @return возвращает Лист объектов Car
-     */
+     */{}
     @GetMapping(value = "/api/cars")
     public ResponseEntity<List<Car>> findAllCars(){
         final List<Car> newsList = carService.findAll();
@@ -127,7 +127,7 @@ public class RestApiController {
     /**
      * Создает автосалон
      * @param carShowRoom объект carShowRoom
-     * @return Лист Carshowroom
+     * @return Листa Carshowroom
      */
     @PostMapping(value = "/api/carshowroom")
     public List<CarShowRoom> createCarShowRoom(@RequestBody CarShowRoom carShowRoom){

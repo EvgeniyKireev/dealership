@@ -142,7 +142,7 @@ public class Car {
     }
 
     /**
-     * Записать id автосалона
+     * Записать id автосалонаS
      * @param showroom_id
      */
     public void setShowroom_id(CarShowRoom showroom_id) {
