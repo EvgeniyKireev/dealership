@@ -22,6 +22,15 @@ public class Car {
     private Integer power;
     private Integer price;
 
+    public Car(String model, Integer year, String color, String category, Integer power, Integer price) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.category = category;
+        this.power = power;
+        this.price = price;
+    }
+
     /**
      * связь с автосалонами
      */

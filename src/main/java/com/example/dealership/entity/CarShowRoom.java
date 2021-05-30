@@ -23,6 +23,13 @@ public class CarShowRoom {
     public String phone;
     public String workingHours;
 
+    public CarShowRoom(String name, String address, String phone, String workingHours) {
+        this.name = name;
+        this.address = address;
+        this.phone = phone;
+        this.workingHours = workingHours;
+    }
+
     /**
      * Связь с авто
      */
